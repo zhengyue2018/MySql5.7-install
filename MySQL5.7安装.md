@@ -130,4 +130,10 @@ All done!
 #输入如下指令，提示输入密码，这里我把密码修改为Root-123，所以我输入Root-123就可以了
 mysql -u root -p
 ```
+### 开放3306端口
+```sql
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'Root-123456' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+exit;
+```
 <font size='3'> **至此安装完成，可以对MySql进行操作了**
