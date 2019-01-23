@@ -1,2 +1,2 @@
-# MySql5.7-install
-mysql5.7单机版安装
+# 大数据技术学习
+# [mysql5.7单机版安装](./MySQL5.7安装.md)
