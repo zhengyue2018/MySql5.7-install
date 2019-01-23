@@ -1,17 +1,17 @@
 # centos7 hadoop 单机模式安装配置
 ## 前言
-本文主要介绍单机版Hadoop的安装配置，作为学习使用，集群的部署一般用Ambari搭建比较方便，本来想把hadoop和hive的放在一起写，由于太多，就分成两篇写了。
+本文主要介绍单机版Hadoop的安装配置，作为学习使用，集群的部署一般用Ambari搭建比较方便，本来想把hadoop和hive的放在一起写，由于太多，就分成两篇写了。
 ## 1. 首先安装JDK1.8版本
-安装方法就不在这里呈现了
+安装方法就不在这里呈现了
 ## 2. 下载Hadoop
 下载地址：http://mirror.bit.edu.cn/apache/hadoop/common/ ，这个是国内的镜像源，自己选个版本下载吧，我下载的是hadoop-3.0.3，跟我们集群上部署的是同一个版本
 ## 3. 解压Hadoop
 根据自己习惯设置解压路径吧，我自己建了个文件夹，解压到指定文件夹了
 ```sh
 # 创建文件夹
-mkdir /opt/hadoop
+mkdir /opt/hadoop
 #解压Hadoop
-tar -zxvf hadoop-3.0.3.tar.gz  -C /opt/hadoop
+tar -zxvf hadoop-3.0.3.tar.gz  -C /opt/hadoop
 ```
 ## 4. 配置hadoop环境变量
 ```sh
@@ -73,11 +73,11 @@ vim /opt/hadoop/hadoop-3.0.3/etc/hadoop/hdfs-site.xml
 ```
 ## 6. SSH免密码登录配置
 这里只配单机的SSH免密登陆
-### 6.1 首先运行
+### 6.1 首先运行
 ```sh
 ssh-keygen -t rsa
 ```
-接下来一直默认回车就好
+接下来一直默认回车就好
 ### 6.2 将公钥导入到认证文件中
 ```sh
 cd ~/.ssh
@@ -125,7 +125,7 @@ YARN_RESOURCEMANAGER_USER=root
 HADOOP_SECURE_DN_USER=yarn
 YARN_NODEMANAGER_USER=root
 ```
-## 8. 启动与停止
+## 8. 启动与停止
 第一次启动hdfs需要格式化：
 ```sh
 cd /opt/hadoop/hadoop-3.0.3
@@ -188,7 +188,11 @@ cd /opt/hadoop/hadoop-3.0.3
 ./sbin/start-yarn.sh
 ```
 浏览器查看：http://172.16.81.129:8088
+
 ![yarn](./pictures/yarn_test.png)
+
 jps查看进程
+
 ![jps](./pictures/jps_view.png)
+
 到此，hadoop单机模式就配置成功了！
