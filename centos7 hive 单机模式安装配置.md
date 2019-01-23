@@ -78,7 +78,7 @@ export HIVE_CONF_DIR=/apps/apache-hive-2.3.4-bin/conf
 - 下载地址：http://dev.mysql.com/downloads/connector/j/ 
 - 我下载的是：mysql-connector-java-5.7.23.tar.gz，解压并将其中的mysql-connector-java-5.7.23-bin.jar放到hive/lib下
 - 具体路径为：/apps/apache-hive-2.3.4-bin/lib
-## 7.初始化数据库
+## 7.初始化数据库
 ```sh
 schematool -initSchema -dbType mysql
 ```
