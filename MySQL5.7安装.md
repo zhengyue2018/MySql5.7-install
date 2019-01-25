@@ -132,8 +132,14 @@ mysql -u root -p
 ```
 ### 开放3306端口
 ```sql
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'Root-123456' WITH GRANT OPTION;
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'Root-123' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 exit;
 ```
+开启防火墙mysql 3306端口的外部访问
+```sh
+firewall-cmd --zone=public --add-port=3306/tcp --permanent
+firewall-cmd --reload
+```
+
 <font size='3'> **至此安装完成，可以对MySql进行操作了**
