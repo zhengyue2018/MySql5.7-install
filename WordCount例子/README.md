@@ -75,14 +75,14 @@ hdfs dfs -ls /input_wordcount
 ```sh
 hadoop jar wordcount-1.0-SNAPSHOT.jar WordCount /input_wordcount /output_word
 ```
-hadoop jar wordcount-1.0-SNAPSHOT.jar WordCount这里提交jar包，告诉主类在哪，后边两个就是输入输出参数了，执行完成可以看到：
+hadoop jar wordcount-1.0-SNAPSHOT.jar WordCount这里提交jar包，告诉主类在哪，后边两个就是输入输出参数了，执行完成可以看到：
 ```sh
 [root@localhost opt]# hdfs dfs -ls /output_word
 Found 2 items
 -rw-r--r--   1 root supergroup          0 2019-01-31 14:32 /output_word/_SUCCESS
 -rw-r--r--   1 root supergroup         32 2019-01-31 14:32 /output_word/part-r-00000
 ```
-在part-r-00000就是运行结果了：
+在part-r-00000就是运行结果了：
 ```sh
 [root@localhost opt]# hdfs dfs -cat /output_word/part-r-00000
 hadoop	2
